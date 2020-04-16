@@ -11,6 +11,8 @@ filetype off
 
 if has("win32")
 	set path+=C:\Soft\mingw-w64\mingw64\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++
+elseif has("unix")
+	set path+=/usr/include/c++/7
 endif
 
 "------------------------------------------------------------------------------
@@ -48,13 +50,18 @@ endif
 " Vundle
 "------------------------------------------------------------------------------
 
-set rtp+=$HOME\vimfiles\bundle\Vundle.vim
-call vundle#begin('$HOME\vimfiles\bundle')
+if has("win32")
+	set rtp+=$HOME\vimfiles\bundle\Vundle.vim
+	call vundle#begin('$HOME\vimfiles\bundle')
+elseif has("unix")
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'morhetz/gruvbox'
-Plugin 'bfrg/vim-cpp-modern'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
@@ -147,3 +154,14 @@ set completeopt-=preview
 
 " Start completion from the first character
 let g:ycm_min_num_of_chars_for_completion=1
+
+"------------------------------------------------------------------------------
+" Vim-cpp-enhanced-highlight
+"------------------------------------------------------------------------------
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_concepts_highlight = 1
