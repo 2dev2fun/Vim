@@ -60,8 +60,8 @@ endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
-"Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'jeaye/color_coded'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'jeaye/color_coded'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
