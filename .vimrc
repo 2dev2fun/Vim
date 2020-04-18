@@ -60,7 +60,8 @@ endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'jeaye/color_coded'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -127,14 +128,14 @@ map <silent> <C-l> :call WinMove('l')<CR>
 
 function! WinMove(key)
 	let t:curwin=winnr()
-	exec "wincmd " a:key
-	if(t:curwin=winnr())
+	exec "wincmd ".a:key
+	if(t:curwin==winnr())
 		if(match(a:key, '[jk]'))
-			wimcmd v
+			wincmd v
 		else
 			wincmd s
 		endif
-		exec "wincmd " a:key
+		exec "wincmd ".a:key
 	endif
 endfunction
 
