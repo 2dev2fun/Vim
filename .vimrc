@@ -60,14 +60,16 @@ endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-"Plugin 'jeaye/color_coded'
+"Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'jeaye/color_coded'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'sheerun/vim-polyglot'
+"Plugin 'vim-python/python-syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -166,3 +168,9 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+
+"------------------------------------------------------------------------------
+" vim-python/python-syntax
+"------------------------------------------------------------------------------
+
+let g:python_highlight_all = 1
