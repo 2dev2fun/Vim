@@ -159,7 +159,7 @@ let g:ycm_confirm_extra_conf=0
 
 " Only show completion as a list instead of sub-window
 let g:ycm_add_preview_to_completeopt=0
-"set completeopt-=preview
+set completeopt-=preview
 
 " Start completion from the first character
 let g:ycm_min_num_of_chars_for_completion=1
