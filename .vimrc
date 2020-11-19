@@ -6,16 +6,6 @@ set nocompatible
 filetype off
 
 "------------------------------------------------------------------------------
-" Path
-"------------------------------------------------------------------------------
-
-if has("win32")
-	set path+=C:\Soft\mingw-w64\mingw64\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++
-elseif has("unix")
-	set path+=/usr/include/c++/7
-endif
-
-"------------------------------------------------------------------------------
 " Disable gui menu and toolbar
 "------------------------------------------------------------------------------
 
@@ -69,6 +59,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'pboettch/vim-cmake-syntax'
 "Plugin 'vim-python/python-syntax'
 
 call vundle#end()
@@ -142,27 +133,19 @@ function! WinMove(key)
 endfunction
 
 "------------------------------------------------------------------------------
-" NerdTree
+" YouCompleteMe
 "------------------------------------------------------------------------------
 
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jk :YcmCompleter GoToDefinition<CR>
-
-"------------------------------------------------------------------------------
-" YouCompleteMe
-"------------------------------------------------------------------------------
+nnoremap <leader>gt :YcmCompleter GetType<CR>
 
 let g:ycm_clangd_args=['--header-insertion=never']
-
-" Load ycm conf by default
 let g:ycm_confirm_extra_conf=0
-
-" Only show completion as a list instead of sub-window
+let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=0
 let g:ycm_add_preview_to_completeopt=0
 set completeopt-=preview
-
-" Start completion from the first character
-let g:ycm_min_num_of_chars_for_completion=1
 
 "------------------------------------------------------------------------------
 " Vim-cpp-enhanced-highlight
