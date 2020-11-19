@@ -50,8 +50,7 @@ endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
-"Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'jeaye/color_coded'
+Plugin '2dev2fun/color_coded'
 Plugin 'morhetz/gruvbox'
 Plugin 'preservim/nerdtree'
 Plugin 'preservim/nerdcommenter'
@@ -60,7 +59,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'pboettch/vim-cmake-syntax'
-"Plugin 'vim-python/python-syntax'
 
 call vundle#end()
 filetype plugin indent on
