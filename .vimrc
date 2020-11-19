@@ -137,6 +137,7 @@ endfunction
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jk :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gt :YcmCompleter GetType<CR>
+nnoremap <leader>fi :YcmCompleter FixIt<CR>
 
 let g:ycm_clangd_args=['--header-insertion=never']
 let g:ycm_confirm_extra_conf=0
