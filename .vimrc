@@ -162,3 +162,10 @@ let g:cpp_concepts_highlight = 1
 "------------------------------------------------------------------------------
 
 let g:python_highlight_all = 1
+
+"-------------------------------------------------------------------------------
+" clang-rename
+"-------------------------------------------------------------------------------
+
+let g:clang_rename_path="clang-rename"
+nnoremap <leader>cr :py3f ~/.vim/bundle/SimpleVim/clang-rename.py<cr>
