@@ -59,6 +59,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'rhysd/vim-clang-format'
 
 call vundle#end()
 filetype plugin indent on
