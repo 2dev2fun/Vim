@@ -104,6 +104,23 @@ set backspace=indent,eol,start
 
 let mapleader=","
 
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+nnoremap <leader>( viw<esc>a)<esc>bi(<esc>lel
+nnoremap <leader>< viw<esc>a><esc>bi<<esc>lel
+
+inoremap jk <esc>
+
+"------------------------------------------------------------------------------
+" Abbreviations
+"------------------------------------------------------------------------------
+
+iabbrev @@ 2def2fun@gmail.com
+iabbrev ccopy Copyright 2020 Maxim 2Dev2Fun, all rights reserved.
+
 "------------------------------------------------------------------------------
 " NerdTree
 "------------------------------------------------------------------------------
@@ -131,13 +148,30 @@ function! WinMove(key)
 endfunction
 
 "------------------------------------------------------------------------------
+" Clang-format
+"------------------------------------------------------------------------------
+
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
+nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+"------------------------------------------------------------------------------
 " YouCompleteMe
 "------------------------------------------------------------------------------
 
-nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>jk :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gt :YcmCompleter GetType<CR>
+nnoremap <leader>go :YcmCompleter GoTo<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
+nnoremap <leader>gd :YcmCompleter GetDoc<CR>
+nnoremap <leader>gt :YcmCompleter GetType<CR>
+nnoremap <leader>gp :YcmCompleter GetParent<CR>
+nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>yd :YcmDiags<CR>
+nnoremap <leader>dc <plug>(YCMHover)
+
+set updatetime=100000
 
 let g:ycm_clangd_args=['--header-insertion=never']
 let g:ycm_confirm_extra_conf=0
